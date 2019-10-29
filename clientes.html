@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/clientes.js"></script>
+    <script type="text/javascript">
+    // Solo permite ingresar numeros.
+    function soloNumeros(e){
+        var key = window.Event ? e.which : e.keyCode
+        return ((key >= 48 && key <= 57) || (key==8))
+    }
+    </script>
+    <title>Clientes</title>
+</head>
+<body>
+    <div id="moduloFrmClientes" class="form-row align-items-center" id="frmClientes">
+    <form action=""> 
+        <div class="container" align="center">
+            <h3>BIENVENIDO, GRACIAS POR VISITARNOS</h3><br><br>
+            <label for="codMesa"><b>Codigo de Mesa</b></label><br>
+            <input placeholder="Cód. mesa" type="text" id="codMesa" name="codMesa"><br>
+            <label for="codPedido"><b>Codigo del Pedido</b></label><br>
+            <input placeholder="Cód. pedido" type="text" id="codPedido" name="codPedido"><br>
+            <br>
+            <input type="button" id="logear" class="button button1" value="Estado del pedido" onclick="VerEstadoPedido()">  
+            <br><div id="error"></div>
+        </div>
+    </form>
+    </div>
+    <div id="moduloMuestroDatosAlCliente">
+        
+    </div>
+    <div id="moduloEncuesta">
+        
+    </div>
+
+</body>
+</html>

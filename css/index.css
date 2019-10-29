@@ -1,0 +1,168 @@
+/*Loading page*/
+.jm-loadingpage {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 999999999;
+	background: url(http://www.pardomanuel.xyz/restaurant/images/gif/gif-principal.gif) center no-repeat #fff;
+}
+/*Loading page*/
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 600px) {
+    /*CEL*/
+    body{
+    /*IMAGEN DE FONDO*/
+    background-image:url(http://www.pardomanuel.xyz/restaurant/images/fondo-celu.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+    #imgListaEmpleados{
+      width: 100%;
+    }
+    select {
+      padding: 12px 20px;
+      -webkit-appearance: none;
+      width: 100%;
+    }
+    img.avatar {
+    width: 40%;
+    border-radius: 50%;
+    }
+    input[type=text], input[type=password], input[type=textarea] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    }
+
+    input[type=button] {
+      display: block;
+      width: 100%;
+      padding: 5px;
+      border: none;
+      margin-bottom: 5px;
+      box-sizing: border-box;
+      font-size: 15 !important;
+      text-align: center !important;
+      text-decoration: none !important;
+      background: rgb(148, 146, 146);
+      color: white;
+      -webkit-appearance: none;
+    }
+    .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    }
+    .container {
+    padding: 16px;
+    }
+    
+}
+@media screen and (min-width: 600px) {
+    /*PC*/
+    #selectTipoEmpleado {
+      width: 35%;
+    }
+    #UnselectTipoEmpleado {
+      width: 35%;
+    }
+    #imgListaEmpleados{
+      width: 30%;
+    }
+    body{
+  /*IMAGEN DE FONDO*/
+  background-image:url(http://www.pardomanuel.xyz/restaurant/images/fondo.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  }
+  #logear{
+      display: block;
+      width: 15%;
+      padding: 7px;
+      border: none;
+      margin-bottom: 5px;
+      box-sizing: border-box;
+      font-size: 15 !important;
+      text-align: center !important;
+      text-decoration: none !important;
+      background: rgb(148, 146, 146);
+      color: white;
+      -webkit-appearance: none;
+    }
+    img.avatar {
+    width: 15%;
+    border-radius: 50%;
+    }
+    input[type=text], input[type=password], input[type=textarea] {
+    width: 35%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  
+}
+#nuevoUsuario, #nuevoPass, #nuevoTipoEmpleado{
+  width: 100%!important;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.container {
+  padding: 16px;
+}
+}
+
+/*agrego*/
+
+.boxes .boton {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  font-size: 15 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  background: black;
+  color: white;
+}
+
+.boxes .boton:nth-of-type(even) {
+  background: black;
+}
+
+.boxes .boton:focus {
+  outline: none;
+  color: #fff;
+  background: grey;
+}
+
+@media screen and (min-width: 600px) {
+  .boxes {
+    display: flex;
+    /*flex-direction: row-reverse;*/
+  }
+}
+.select {
+  position: relative;
+  border: 1px solid #ccc;
+}
+  
+select {
+    padding: 12px 20px;
+}
+
+.btn-black{background-color:#000;color: #FFF;} 

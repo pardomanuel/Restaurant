@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="jsPDF/jsPDF-1.3.2/dist/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="js/push.min.js"></script>
+    <title>Restaurant</title>
+</head>
+<body>
+    <div class="jm-loadingpage"></div>
+    <div class="container">
+        <div id="moduloMenu">
+            <nav>
+                <div class="boxes">
+                <input class="boton" type="button" id="btnTomarPedido" value="Tomar Pedido" onclick="botonTomarPedido()">
+                <input class="boton" type="button" id = "btnListarMesas" value="Listar Mesas" onclick="listarMesas()">
+                <input class="boton" type="button" value="Pedidos Pendientes" onclick="botonPedidosPendientes()">
+                <input class="boton" type="button" id="btnMostrar" value="Modulo Mostrar" onclick="ModuloMostrar()">
+                <input class="boton" type="button" id="btnAbmEmpleados" value="ABM Empleados" onclick="Empleados()">
+                <input class="boton" type="button" value="Cerrar Sesión" onclick="CerrarSesion()">
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="moduloTomarPedidos">
+                    <label for="numeroPedido">Pedido N°</label><br>
+                    <input type="text" id="numeroPedido" name="numeroPedido" readonly="readonly"><br>
+                    <label for="mesa">Mesa N°</label><br>
+                    <select id="mesa" name="mesa"></select><br>
+                    <select id="productos"></select><br>
+                    <input placeholder="Nombre del cliente" type="text" id="nombreCliente"><br>
+                    <input type='file' name='imagenPedido' id='imagenPedido' /><br><br>
+                    <input type="button" value="Agregar al Pedido" onclick="AgregarAlPedido()"><br>
+                    <input type="button" value="Cargar Pedido" onclick="cargarPedido()">
+                    <br>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="detallePedido">
+                </div>
+            </div>
+        </div>
+   
+    
+        <div class="row">
+            <div class="col-md-12">
+                    <div id="modulPedidosPendientes">
+        
+                    </div>
+            </div>
+        </div>
+    
+    
+    <div id="agregoTiempoPedido">
+        
+    </div>
+    
+        <div class="row">
+            <div class="col-md-12">
+                    <div id="moduloMuestroMesas"> 
+        
+                    </div>
+            </div>
+        </div>
+    
+    
+    
+        <div class="row">
+            <div class="col-md-12">
+                <div id="moduloMostrar">
+                    <h3>Mostrar: </h3>
+                    <select id="selectMostrar" onClick="opcionSelect()">
+                        <option value="ingresos">Los días y horarios que se Ingresaron al sistema</option>
+                        <option value="operacionesPorSector">Cantidad de operaciones de todos  por sector. </option>
+                        <option value="operacionesPorSectorPorEmpleado"> Cantidad de operaciones de todos  por sector  listada por cada empleado. </option>
+                        <option value="operacionesPorEmpleadoPorSeparado">Cantidad de operaciones de cada uno por separado.</option>
+                        <option value="productosMasVendidos">Los Productos mas vendidos</option>
+                        <option value="productosMenosVendidos">Los Productos menos vendidos</option>
+                        <option value="pedidosCancelados">Los Pedidos Cancelados</option>
+                        <option value="pedidosNoEntregadosTiempoEstipulado">Los Pedidos que no se entregaron en el tiempo estipulado</option>
+                        <option value="mesaMasUsada">La Mesa más usada</option>
+                        <option value="mesaMenosUsada">La Mesa menos usada</option>
+                        <option value="mesaMasFacturo">La Mesa que mas facturo</option>
+                        <option value="mesaMenosFacturo">La Mesa que menos facturo</option>
+                        <option value="mesaFacturaMayorImporte">La Mesa que tuvo factura con mayor importe</option>
+                        <option value="mesaFacturaMenorImporte">La Mesa que tuvo factura con menor importe</option>
+                        <option value="facturacionMesaEntreFechas">Facturacion de mesas entre fechas</option>
+                        <option value="mejoresComentariosMesa">Mejores comentarios</option>
+                        <option value="peoresComentariosMesa">Peores comentarios</option>
+                        <option >---------------------------------</option>
+                        <option value="listadoEmpleados">Listado Empleados</option>
+                        <option value="todosLosPedidos">Listar todos los pedidos</option>
+                        <option >---------------------------------</option>
+                        <option value="estadisticaMesas">Estadistica de las mesas</option>
+                        <option value="estadisticaEmpleados">Estadísticas de Empleados.</option>
+                        <option >---------------------------------</option>
+                        <option value="listadoHIHFImporte">Listado hora inicio, hora final, importe.</option>
+                        <option >---------------------------------</option>
+                        <option value="facturacionEntreFechas">Facturacion entre fechas.</option>
+                        <option value="ComPunEntreFechas">Comentarios y puntuación entre fechas.</option>
+                        <option >---------------------------------</option>
+                        <option value="promedioImportes">Promedio mensual de importes.</option>
+                        <option value="promedioMesas">Promedio mensual de mesas.</option>
+                        <option value="promedioEmpleados">Promedio mensual de Empleados.</option>
+                        
+                    </select> 
+                    <br>
+                    <div id="leyendaAclaratoria"></div>
+                    <input type="text" placeholder="sector / idMesa" name="sector" id="sector">
+                    <br>
+                     <div><label id="divFechaMin"for="fechaMin">Desde:</label><br></div>
+                    <input type="date" name="fechaMin" id="fechaMin"></input><br>
+                    <label for="fechaMax">Hasta:</label><br>
+                    <input type="date" name="fechaMax" id="fechaMax"></input><br><br>
+                    <input type="button" value="Mostrar" onclick="Mostrar()"><br><br>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-md-12">
+                    <div id="moduloMuestroEnDetalle">
+                        
+                    </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="">
+                    <div id="moduloMuestroGraficoTorta">
+                        <br>
+                        <!--<canvas id="oilChart" width="50" height=""></canvas>-->
+                    </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="">
+                        <div id="moduloModificoEmpleado">
+                            
+                        </div>
+            </div>
+        </div>
+    
+    
+    <div id="moduloCambioEstadoMesas">
+        <h3>Cambiar Estado</h3>
+        <select id="estadosMesas" name="estadosMesas">
+        </select>
+        
+    </div>
+    <br>
+    <div id="btnCambioEstadoMesas">
+    </div>
+    <script>
+
+    $(document).ready(function() {
+            
+    setTimeout(function()
+    {
+        $(".jm-loadingpage").fadeOut("slow");
+
+    }, 3000);
+	
+});
+
+    $("#btnExport").click(function(e) {
+        alert("OK");
+        window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#moduloMuestroEnDetalle').html()));
+
+        e.preventDefault();
+
+});
+function soloNumeros(e){
+        var key = window.Event ? e.which : e.keyCode
+        return ((key >= 48 && key <= 57) || (key==8))
+    }
+    </script>
+</body>
+</html>
